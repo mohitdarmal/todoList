@@ -1,0 +1,6 @@
+#container{width:60%; margin: 0 auto; }
+button{cursor: pointer;}
+#arrItem{font-size: 30px; }
+.unselect{text-decoration: line-through; color:#848484; }
+#deletePopUp{display: none;}
+
