@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url(images//bck-img.jpg);
+    background-image: url(bck-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
