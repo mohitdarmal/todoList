@@ -16,76 +16,61 @@ enterButton.addEventListener("click", function () {
 });
 
 //When user click on inputTextBox it start the listData() function
-inputTextBox.addEventListener("keyup", function () {
+inputTextBox.addEventListener("keydown", function () {
     if (event.keyCode === 13) {
         listData();
     }
 })
 
-
-
-
-
 var listData = function () {
     if (inputTextBox.value !== "") {
         var list = []
-        list.push(inputTextBox.value);        
+        list.push(inputTextBox.value);
         // var list2 = "";
         for (var i = 0; i < list.length; i++) {
-            var para = document.createElement("P");            
+            var targetP = document.querySelectorAll("#todoListDisplay p");
+            var para = document.createElement("P");
+            var span = document.createElement("span");
             var paraText = document.createTextNode(inputTextBox.value);
+            var spanText = document.createTextNode("delete");
             para.appendChild(paraText);
+            span.appendChild(spanText);
             todoListDisplay.appendChild(para);
+            // para.appendChild(span);
+            // targetP.insertBefore(span, targetP.childNodes[i]);
             // list2 = list2 + "<p id='arrItem'>" + list[i] +  "</p>";
             // todoListDisplay.innerHTML = list;
             inputTextBox.value = null;
-            arrList();
-            
-            
+            arrList();           
+        }
         }
     }
-    // else if(inputTextBox.value === ""){
-    //     list.pop();
-    // }
-}
 
 var arrList = function () {
     var targetP = document.querySelectorAll("#todoListDisplay p");
+    var targetSpan = document.querySelectorAll("#todoListDisplay p span");
     for (var i = 0; i < targetP.length; i++) {
-        targetP[i].addEventListener("click", function () {
-            this.classList.add("unselect");              
-            // console.log(this)          
-        });
+        targetP[i].onclick = function () {
+            this.classList.toggle("unselect");                                             
+        }
+        // targetSpan[i].addEventListener("click", function (){
+        //     this.classList.add("deleteButton");
+        //     // targetP[i].classList.add("deleteButton") 
+        //     // targetP[i].style.display = "none"
+        //     // f3();
+        // })
     }
+    
 }
 
-
-
-// when user click on arrya items
-// var arrList = function () {
-//     var arrItem = document.querySelectorAll("#arrItem");
-//     for (var i = 0; i < arrItem.length; i++) {
-//         arrItem[i].addEventListener("click", function () {
-//             this.classList.toggle("unselect");
-//         });
+// function f3(){    
+//     var targetSpan = document.querySelectorAll("#todoListDisplay span");
+//     var targetP = document.querySelectorAll("#todoListDisplay p");
+//     for (var i = 0; i < targetP.length; i++) {
+//         targetP[i].style.display = "none"
 //     }
 // }
 
-// var f1 = function () {
-//     for(var i = 0; i < arrItem.length; i++){
-//         console.log(list[i])
-//     }
-
-// }
-// markAll.addEventListener("click", function(){
-// function unslectedAdd (){
-//     var arrItem = document.querySelectorAll("#arrItem");    
-//     for (var i = 0; i < arrItem.length; i++) {
-//             arrItem[i].addEventListener("click", function () {
-//                 this.classList.add("unselect");                  
-//             });
-//     }
-// }
 
 //when user click on mark all button 
 markAll.addEventListener("click", function () {
@@ -106,8 +91,16 @@ unmarkAll.addEventListener("click", function () {
 //when user click on delete all button 
 deleteAll.addEventListener("click", function () {
     var targetP = document.querySelectorAll("#todoListDisplay p");
+    var button = document.querySelectorAll("#button");    
+    var body = document.querySelector("body");
+    var container = document.querySelector("#container");
+    var h1 = document.querySelector("h1");
     var ans = "yes";
     deletePopUp.style.display = "block"
+    body.style.background = "rgba(0, 0, 0, 0.84)"
+    container.style.opacity = "0.2"
+    h1.style.color = "white"
+
     for (var i = 0; i < targetP.length; i++) {
         yes.addEventListener("click", function () {
             list = []
@@ -115,9 +108,15 @@ deleteAll.addEventListener("click", function () {
             list2 = ""
             listData();
             deletePopUp.style.display = "none"
+            body.style.background = ""
+            container.style.opacity = "1"
+            h1.style.color = "#000"
         })
         no.addEventListener("click", function () {
             deletePopUp.style.display = "none"
+            body.style.background = ""
+            container.style.opacity = "1"
+            h1.style.color = "#000"
         })
     }
 });

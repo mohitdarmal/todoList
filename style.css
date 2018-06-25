@@ -1,6 +1,191 @@
-#container{width:60%; margin: 0 auto; }
-button{cursor: pointer;}
-#arrItem{font-size: 30px; }
-.unselect{text-decoration: line-through; color:#848484; }
-#deletePopUp{display: none;}
+@import url('https://fonts.googleapis.com/css?family=Rajdhani');
+* {
+    font-family: 'Rajdhani', sans-serif;
+}
 
+body {
+    background-image: url(images//bck-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.button{}
+
+button {
+    cursor: pointer;
+}
+
+#todoListDisplay{
+    width:52%;
+    float: left;
+    min-height: 200px;
+}
+
+#todoListDisplay p {
+    font-size: 26px;
+    margin: 0;
+    display: -webkit-inline-box;
+    width:75%;
+    background: #23aabf;
+    margin-bottom: 10px;
+    color: #fff;
+    padding: 4px 15px;
+}
+
+.unselect {
+    text-decoration: line-through;
+    color: #1aa0b4;
+}
+
+.select {
+    text-decoration: none;
+}
+
+#deletePopUp {
+    display: none;
+    width: 26%;
+    position: absolute;
+    top: 21%;
+    background: #f1737f;
+    left: 20%;
+    color: #fff;
+    text-align: center;
+    border: 3px solid #ff7684;
+    border-radius: 5px;
+    box-shadow: 0 6px 16px 17px #00000014;
+}
+
+.deleteButton {
+    display: none;
+}
+
+#inputTextBox {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #23aabf;
+    background: #f1f1f1;
+    outline: 0;
+}
+
+#inputTextBox::placeholder {
+    color: #23aabf;
+    font-size: 16px;
+}
+
+.btn-2a {
+    border-radius: 0 0 5px 0px;
+}
+
+.btn-2 {
+    background: #23aabf;
+    color: #fff;
+    box-shadow: 0 6px #0d7f91;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;}
+
+    .btn {
+        border: none;
+        background: #23aabf;
+        cursor: pointer;
+        padding: 9px 45px;;
+        top: -3px;
+        display: inline-block;        
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color:#fff;
+        font-weight: 700;
+        left: -8px;
+        outline: none;
+        position: relative;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .btn:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .btn-4a {
+        border-radius: 0 0 5px 5px;
+    }
+    
+    .btn-4 {
+        background: #f1737f;
+        color: #fff;
+        box-shadow: 0 6px #c74250;
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;}
+    
+        .btn3 {
+            border: none;
+            background: #f1737f;
+            cursor: pointer;
+            width: 10%;
+            padding: 9px 10px;
+            display: inline-block;        
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color:#fff;
+            font-weight: 700;
+            /* left: -8px; */
+            outline: none;
+            position: relative;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            margin-bottom: 25px;
+        }
+    
+        .btn3:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+    
+        .btn-6i {
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            padding: 0;
+        }
+        .btn-6 {
+            background: #cb4e4e;
+            color: #fff;
+            box-shadow: 0 6px #ab3c3c;
+            -webkit-transition: none;
+            -moz-transition: none;
+            transition: none;
+        }
+        .btn5 {
+            border: none;
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+            background: none;
+            cursor: pointer;
+            display: inline-block;
+            margin: 15px 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            outline: none;
+            position: relative;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;}
